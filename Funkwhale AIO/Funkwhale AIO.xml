@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Funkwhale-all-in-one</Name>
+  <Repository>funkwhale/all-in-one:latest</Repository>
+  <Registry>https://hub.docker.com/r/funkwhale/all-in-one/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/111742-support-funkwhale-all-in-one/</Support>
+  <Project>https://funkwhale.audio/</Project>
+  <Overview>Funkwhale is a community-driven project that lets you listen and share music and audio within a decentralised, open network.&#xD;
+&#xD;
+This is an alternative Docker image you can use to deploy Funkwhale, that does not follow the "one process per container" philosophy. This one contains Postgres, Redis, Nginx and all the needed files and configuration to start a dockerized Funkwhale instance in a single container.</Overview>
+  <Category>MediaServer:Music</Category>
+  <WebUI>http://[IP]:[PORT:3030]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/thetarkus/docker-templates/master/images/funkwhale-logo-500.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1627106602</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Funkwhale is a community-driven project that lets you listen and share music and audio within a decentralised, open network.&#xD;
+&#xD;
+This is an alternative Docker image you can use to deploy Funkwhale, that does not follow the "one process per container" philosophy. This one contains Postgres, Redis, Nginx and all the needed files and configuration to start a dockerized Funkwhale instance in a single container.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3030</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/music</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/funkwhale</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>FUNKWHALE_HOSTNAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>NESTED_PROXY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Music Path" Target="/music" Default="" Mode="ro" Description="Container Path: /music" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Funkwhale Hostname" Target="FUNKWHALE_HOSTNAME" Default="" Mode="" Description="Container Variable: FUNKWHALE_HOSTNAME" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Nested Proxy" Target="NESTED_PROXY" Default="0" Mode="" Description="Container Variable: NESTED_PROXY | Set to '1' when container is behind a reverse proxy." Type="Variable" Display="always" Required="true" Mask="false">0</Config>
+  <Config Name="HTTP" Target="80" Default="" Mode="tcp" Description="Container port 80" Type="Port" Display="always" Required="true" Mask="false">3030</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Data Path" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/funkwhale</Config>
+</Container>
