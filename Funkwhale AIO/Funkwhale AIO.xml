@@ -11,7 +11,9 @@
   <Project>https://funkwhale.audio/</Project>
   <Overview>Funkwhale is a community-driven project that lets you listen and share music and audio within a decentralised, open network.&#xD;
 &#xD;
-This is an alternative Docker image you can use to deploy Funkwhale, that does not follow the "one process per container" philosophy. This one contains Postgres, Redis, Nginx and all the needed files and configuration to start a dockerized Funkwhale instance in a single container.</Overview>
+This is an alternative Docker image you can use to deploy Funkwhale, that does not follow the "one process per container" philosophy. This one contains Postgres, Redis, Nginx and all the needed files and configuration to start a dockerized Funkwhale instance in a single container.
+
+To create admin account, run command "sudo docker exec -it Funkwhale-all-in-one manage createsuperuser"</Overview>
   <Category>MediaServer:Music</Category>
   <WebUI>http://[IP]:[PORT:3030]/</WebUI>
   <TemplateURL/>
