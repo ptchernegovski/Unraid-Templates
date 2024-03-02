@@ -15,7 +15,7 @@ This is an alternative Docker image you can use to deploy Funkwhale, that does n
 
 To create admin account, run command "sudo docker exec -it Funkwhale-all-in-one manage createsuperuser"</Overview>
   <Category>MediaServer:Music</Category>
-  <WebUI>http://[IP]:[PORT:3030]/</WebUI>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/thetarkus/docker-templates/master/images/funkwhale-logo-500.png</Icon>
   <ExtraParams/>
