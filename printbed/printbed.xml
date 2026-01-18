@@ -3,7 +3,7 @@
   <Name>printbed</Name>
   <Repository>prosthetichead/printbed</Repository>
   <Registry>https://hub.docker.com/r/prosthetichead/printbed/</Registry>
-  <Network>proxynet</Network>
+  <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -27,4 +27,5 @@ PrintBed is currently a very early Alpha. Some basic features are currently brok
   <Config Name="Port" Target="8080" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
   <Config Name="print files" Target="/print-files" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"></Config>
   <Config Name="appdata" Target="/appdata" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/printbed</Config>
+
 </Container>
